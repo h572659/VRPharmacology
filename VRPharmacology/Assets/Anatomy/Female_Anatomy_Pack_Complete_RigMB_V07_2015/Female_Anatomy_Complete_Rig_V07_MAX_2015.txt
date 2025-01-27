@@ -1,0 +1,35 @@
+PLASTICBOY - ANATOMY MODELS V07
+-------------------------------
+
+Model: Male Anatomy Pack Complete V07
+
+
+Texture Maps: 75
+Location: Female_Anatomy_Pack_Complete_RigMB_V07 folder
+
+Poly count: 411 063
+(Environmental  Sphere included)
+Vertex count: 409 532
+(Environmental  Sphere included)
+
+Project folder: Female_Anatomy_Pack_Complete_RigMB_V07
+
+Name: Female_Anatomy_Complete_RigBiped_V07_MAX
+File format: .max
+File Size: 171 MB
+
+
+Renderer: Default Scanline/ NVIDIA Mental Ray
+
+Application: Autodesk 3ds Max 2015
+
+Export version: 3ds Max 2015
+
+Axis:  z-up
+
+MotionBuilder: Use 3Ds Max Biped Template character.
+
+http://www.digitaltutors.com/tutorial/790-3ds-Max-to-MotionBuilder-Integration#play-18328
+
+Model Smoothing options:
+-	Use Meshsmooth Modifier
