@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 523da481267248d459def79cc8ef68e0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Pasient Room.unity
     guid: bb8622376b6d8c84792b1e64ce203c65
+  - enabled: 1
+    path: Assets/Scenes/Pasient Room Jonas Test.unity
+    guid: 4ea8e6ab5678b2d4c801b4e722af9379
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
