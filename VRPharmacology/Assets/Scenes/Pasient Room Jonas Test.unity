@@ -705,6 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctAnswer: 0
+  alternativ: {fileID: 1099049786}
   uiText: {fileID: 915672934}
   animator: {fileID: 450976418}
   gamelogic: {fileID: 41932517}
@@ -881,7 +882,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf086797fa2751c42922967a62323611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctAnswer: 1
+  correctAnswer: 0
+  alternativ: {fileID: 256059773}
   uiText: {fileID: 915672934}
   animator: {fileID: 450976418}
   gamelogic: {fileID: 41932517}
@@ -1217,7 +1219,7 @@ GameObject:
   - component: {fileID: 1002352408}
   - component: {fileID: 1002352407}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1758,6 +1760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctAnswer: 0
+  alternativ: {fileID: 2137366221}
   uiText: {fileID: 915672934}
   animator: {fileID: 450976418}
   gamelogic: {fileID: 41932517}
@@ -3477,7 +3480,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3559,6 +3562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctAnswer: 0
+  alternativ: {fileID: 1039484609}
   uiText: {fileID: 915672934}
   animator: {fileID: 450976418}
   gamelogic: {fileID: 41932517}

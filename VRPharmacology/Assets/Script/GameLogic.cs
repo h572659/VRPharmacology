@@ -3,25 +3,39 @@ using TMPro;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 public class GameLogic : MonoBehaviour {
-    [SerializeField] private TMP_Text uiText; // Drag your UI Text here
-    [SerializeField] private float typeSpeed = 0.05f; // Speed of the effect
-    [SerializeField] private float ButtonSpeed = 0.05f; // Determins how long between button spawns
+    [SerializeField] private TMP_Text uiText; // Heter UI, men burde heite snakkebobble.
+    [SerializeField] private float typeSpeed = 0.02f; // Ser litt kulere ut om ikke alt skrives ut med en gang, dette bestemmer farten
+    [SerializeField] private float ButtonSpeed = 0.02f; // Tiden det tar mellom kver knapp blir synlig, igjen fordi dette ser kullere ut
     [SerializeField] private Animator animator; // "Mascots" animator
     [SerializeField] private GameObject startButton;
-    [SerializeField] private GameObject OptionsButtons;
-
+    [SerializeField] private GameObject OptionsButtons; // Valg alternativene
+    
+    // Spørsmålene 
+    private Stack<QuizQuestion> questionStack = new Stack<QuizQuestion>();
+    // Spørsmålet
+    QuizQuestion question;
+    // telle var for indexer
+    int index = 0;
+    // Teksten som går inn i snakkebobblen
     private string fullText;
+    // Variabel som blir brukt for skrive effekten i snakkebobblen. 
     private string currentText = "";
-    private Coroutine typingCoroutine; 
+    private Coroutine typingCoroutine;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
+        LoadQuestionsFromJson();
         fullText = "Welcome! Please press play to start.";
         animator.Play("Talk", 1, 0f);
         typingCoroutine = StartCoroutine(ShowText());
     }
 
+    // Gjør at teksten skrives ut litt etter litt
     IEnumerator ShowText() {
         for (int i = 0; i <= fullText.Length; i++)
         {
@@ -32,32 +46,88 @@ public class GameLogic : MonoBehaviour {
             typingCoroutine = null;
     }
 
-    public void Click(){
-        startButton.SetActive(false);
+    public void Click(){ // Kjører når start knappen er presset
+        startButtonVisibility();
+        // Rydder opp knapper
+        foreach (Transform child in OptionsButtons.transform){
+            child.gameObject.SetActive(false); // Sørger for at de ikke vises på skjerm
+            child.GetComponent<Button>().interactable = true; // Sørger for at når de vises at de kan klikkes på
+            AnswerButton button = child.GetComponent<AnswerButton>(); // MonoScriptet som bestemmer mye av atferden
+            button.correctAnswer = false; // Svar er falsk ved default
+        }
+        // Stopper skrivingen tidlig om spiller trykker på start knappen.
         if (typingCoroutine != null){
             StopCoroutine(typingCoroutine);
             uiText.text = fullText;
         }
+        questionLogic();
+    }
+
+    public void startButtonVisibility() { // Slår av og på knappen
+        startButton.SetActive(!startButton.activeSelf);
+    }
+
+    // Denne metoden henter spørsmål fra stokken, og setter opp spørsmål og svar.
+    private void questionLogic() {
+        if (questionStack.Count != 0){
+        question = questionStack.Pop(); // Henter spørsmål fra toppen av stacken TODO: Sjekk om den er tom.
         uiText.text = "";
-        fullText = "Pasienten veier 60 kg, og det oppgitte distribusjonsvolumet for digoksin er 7 L/kg. Hva er pasientens totale distribusjonsvolum for digoksin?";
+        fullText = question.question;
         animator.Play("Talk", 1, 0f);
         animator.Play("Point", 2, 0f);
         typingCoroutine = StartCoroutine(ShowText());
 
+        // Kom til meg i en drøm
+        // Kontekst: Orgiginalt hadde jeg denne logikken inne i corouinen, men det trenger jeg jo ikke, haha. 
+        foreach (Transform child in OptionsButtons.transform) {
+        child.GetComponent<AnswerButton>().buttonSetup(question.answers[index], index == question.correctIndex);
+            index++;
+            if (index > 3) {
+                index = 0;
+            }
+        }
+
         StartCoroutine(ActivateButtons());
+        } else {
+            uiText.text = "This is the end of the game";
+        }
     }
         private IEnumerator ActivateButtons()
     {
-        // Get all child buttons of the parent object
+        // Get og slå på alle barneobjektene 
         foreach (Transform child in OptionsButtons.transform)
         {
             if (child.gameObject.activeSelf == false)  // Only activate if it's not active
             {
                 child.gameObject.SetActive(true);   // Activate the button
             }
-
             yield return new WaitForSeconds(ButtonSpeed);  // Wait for the specified delay before activating the next one
         }
 
     }
+    void LoadQuestionsFromJson()
+    {
+        // Load the JSON file from Resources folder
+        TextAsset jsonFile = Resources.Load<TextAsset>("questions");
+
+        if (jsonFile != null)
+        {
+            // Henter spørsmål fra Json
+            List<QuizQuestion> questions = JsonHelper.FromJson<QuizQuestion>(jsonFile.text).ToList();
+            // Sorterer tilfeldig 
+            questions = questions.OrderBy(q => Random.value).ToList();        
+            
+            // Putter på stacken
+            foreach (QuizQuestion question in questions)
+            {
+                questionStack.Push(question);
+            }
+        }
+
+        else
+        {
+            Debug.LogError("Quiz JSON file not found in Resources!");
+        }
+    }
+
 }

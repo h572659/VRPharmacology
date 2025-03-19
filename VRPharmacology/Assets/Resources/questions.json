@@ -1,0 +1,53 @@
+[
+  {
+    "question": "Du administrerer digoksin til en 78 år gammel kvinne med hjertesvikt og atrieflimmer. Legemidlet kommer inn i blodet og begynner å fordele seg. Hvor tror du digoksin primært distribueres?",
+    "answers": ["Fettvev", "Muskelvev", "Plasma", "Jeg veit ikke"],
+    "correctIndex": 1
+  },
+  {
+    "question": "What is 2 + 2?",
+    "answers": ["3", "4", "5", "6"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Pasienten veier 60 kg, og det oppgitte distribusjonsvolumet for digoksin er 7 L/kg. Hva er pasientens totale distribusjonsvolum for digoksin?",
+    "answers": ["120 L", "60 L", "420L", "413 L"],
+    "correctIndex": 2
+  },
+  {
+    "question": "Etter flere dager viser pasienten tegn på toksisitet. Hva har skjedd med distribusjonsvolumet?",
+    "answers": ["Økt", "Reduset", "Uendret", "Hæh?"],
+    "correctIndex": 1
+  },
+  {
+    "question": "En 65 år gammel mann med sepsis får en intravenøs dose gentamicin. Legemidlet sprer seg gjennom kroppen. Hvordan påvirkes distribusjonsvolumet for propofol hos denne pasienten?",
+    "answers": ["Øker", "Reduseres", "Forblir uendret", "Haha.."],
+    "correctIndex": 0
+  },
+  {
+    "question": "Pasientens infeksjon forverres. Hva bør du gjøre med doseringen?",
+    "answers": ["Øke dosen", "Redusere dosen", "Beholde samme dose", "Hakke peiling"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Pasienten veier 80 kg, og gentamicin har et distribusjonsvolum på 0,25 L/kg. Hva er pasientens distribusjonsvolum?",
+    "answers": ["10 L", "20 L", "30 L", "40 L"],
+    "correctIndex": 1
+  },
+  {"question": "En 45 år gammel mann (BMI = 40) får propofol som anestesi. Legemidlet sprer seg raskt.",
+    "answers": ["Øker", "Reduseres", "Forblir uendret", "Veit ikke"],
+    "correctIndex": 1
+  },
+  {
+    "question":"Etter operasjonen tar det lengre tid for pasienten å våkne. Hva burde vært gjort annerledes?",
+    "answers": ["Redusert vedlikeholdsdose", "Økt initialdose", "Ingen endringer", "Mye endringer"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Halveringstiden (t1/2) kan estimeres med formelen: t1/2 = (0,693 × Vd) / Cl. Hvis distribusjonsvolumet for propofol hos denne pasienten er 400 L og clearance (Cl) er 40 L/time, hva er halveringstiden?",
+    "answers": ["5 timer", "7 timer", "8 timer", "10 timer"],
+    "correctIndex": 1
+  }
+]
+
+

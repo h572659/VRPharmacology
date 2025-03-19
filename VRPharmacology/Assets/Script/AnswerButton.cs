@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class AnswerButton : MonoBehaviour
 {
-    [SerializeField] private bool correctAnswer;
-    [SerializeField] private TMP_Text uiText; 
+    public bool correctAnswer;
+    public TMP_Text alternativ; // Knappens svar
+    [SerializeField] private TMP_Text uiText; // Snakkebobblen til Mascot
     [SerializeField] private Animator animator; // "Mascots" animator
     [SerializeField] private GameObject gamelogic;
 
@@ -23,18 +24,24 @@ public class AnswerButton : MonoBehaviour
             {
                 child.gameObject.SetActive(true);
             }
+            child.GetComponent<Button>().interactable = false;
             child.GetComponent<AnswerButton>().RightOrWrong();
         }
+        gamelogic.GetComponent<GameLogic>().startButtonVisibility();
     }
     private void RightOrWrong() {
         var colors = GetComponent<Button> ().colors;
         if (correctAnswer) {
              //Stjålet denne koden fra nettet, veit ikke hva for noe svart magi dette er
-            colors.normalColor = Color.green;
+            colors.disabledColor = Color.green;
             GetComponent<Button> ().colors = colors;
           } else {
-            colors.normalColor = Color.red;
+            colors.disabledColor = Color.red;
             GetComponent<Button> ().colors = colors;
           }
+    }
+    public void buttonSetup(string text, bool correctAnswer) {
+        this.correctAnswer = correctAnswer;
+        alternativ.text = text;
     }
 }
