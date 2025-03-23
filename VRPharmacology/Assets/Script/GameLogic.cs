@@ -12,6 +12,7 @@ public class GameLogic : MonoBehaviour {
     [SerializeField] private float typeSpeed = 0.02f; // Ser litt kulere ut om ikke alt skrives ut med en gang, dette bestemmer farten
     [SerializeField] private float ButtonSpeed = 0.02f; // Tiden det tar mellom kver knapp blir synlig, igjen fordi dette ser kullere ut
     [SerializeField] private Animator animator; // "Mascots" animator
+    [SerializeField] private Animator curtainAnimator; // Animerer gardinen animator
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject OptionsButtons; // Valg alternativene
     
@@ -26,9 +27,26 @@ public class GameLogic : MonoBehaviour {
     // Variabel som blir brukt for skrive effekten i snakkebobblen. 
     private string currentText = "";
     private Coroutine typingCoroutine;
+    // "Cacher" knappenes informasjon / script.
+    private List<AnswerButton> buttonsLogic;
+    // Lyd kontroller.
+    private SoundManager sounds;
+    private Patient patientModelController;
+    private bool gameRunning = false;
+
+    private void Awake() {
+        sounds = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+        patientModelController = GameObject.FindGameObjectWithTag("Patient").GetComponent<Patient>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
+        sounds.PlayMusic(sounds.before);
+        // Henter ut Monoscriptene til knappene.
+        buttonsLogic = new List<AnswerButton>();
+        foreach (Transform child in OptionsButtons.transform) {
+            buttonsLogic.Add(child.GetComponent<AnswerButton>());
+        }
         LoadQuestionsFromJson();
         fullText = "Welcome! Please press play to start.";
         animator.Play("Talk", 1, 0f);
@@ -47,6 +65,11 @@ public class GameLogic : MonoBehaviour {
     }
 
     public void Click(){ // Kjører når start knappen er presset
+        if (!gameRunning){
+            gameRunning = true;
+            sounds.StopMusic();
+            sounds.PlayMusic(sounds.start);
+        }
         startButtonVisibility();
         // Rydder opp knapper
         foreach (Transform child in OptionsButtons.transform){
@@ -63,7 +86,7 @@ public class GameLogic : MonoBehaviour {
         questionLogic();
     }
 
-    public void startButtonVisibility() { // Slår av og på knappen
+    public void startButtonVisibility() { // Slår av og på "start"-knappen
         startButton.SetActive(!startButton.activeSelf);
     }
 
@@ -71,22 +94,27 @@ public class GameLogic : MonoBehaviour {
     private void questionLogic() {
         if (questionStack.Count != 0){
         question = questionStack.Pop(); // Henter spørsmål fra toppen av stacken TODO: Sjekk om den er tom.
+        if (question.man){
+            patientModelController.PatientMan();
+        } else {
+            patientModelController.PatientWoman();
+        }
         uiText.text = "";
         fullText = question.question;
         animator.Play("Talk", 1, 0f);
         animator.Play("Point", 2, 0f);
         typingCoroutine = StartCoroutine(ShowText());
 
-        // Kom til meg i en drøm
-        // Kontekst: Orgiginalt hadde jeg denne logikken inne i corouinen, men det trenger jeg jo ikke, haha. 
-        foreach (Transform child in OptionsButtons.transform) {
-        child.GetComponent<AnswerButton>().buttonSetup(question.answers[index], index == question.correctIndex);
+        // "Randomizer" rekkefølgen til knappene, så går igjenom og bestemmer deres status som rett eller falsk svar.
+        buttonsLogic = buttonsLogic.OrderBy(q => Random.value).ToList(); 
+        foreach (AnswerButton button in buttonsLogic) {
+        button.buttonSetup(question.answers[index], index == question.correctIndex);
             index++;
             if (index > 3) {
                 index = 0;
             }
         }
-
+        curtainAnimator.Play("Up",0,0f);
         StartCoroutine(ActivateButtons());
         } else {
             uiText.text = "This is the end of the game";
@@ -129,5 +157,6 @@ public class GameLogic : MonoBehaviour {
             Debug.LogError("Quiz JSON file not found in Resources!");
         }
     }
+
 
 }

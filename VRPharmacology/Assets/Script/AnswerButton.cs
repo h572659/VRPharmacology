@@ -8,14 +8,20 @@ public class AnswerButton : MonoBehaviour
     public TMP_Text alternativ; // Knappens svar
     [SerializeField] private TMP_Text uiText; // Snakkebobblen til Mascot
     [SerializeField] private Animator animator; // "Mascots" animator
+    [SerializeField] private Animator curtainAnimator; // Animerer gardinen animator
+
     [SerializeField] private GameObject gamelogic;
+    private SoundManager sounds;
 
     public void ClickMe(){
         gamelogic.GetComponent<MonoBehaviour>().StopAllCoroutines();
-        animator.Play("Talk", 1, 0f);
         if (correctAnswer){
             uiText.text = "Correct!";
+            sounds.PlaySFX(sounds.correctAnswer);
+            animator.Play("ThumbsUP", 2, 0f);
         } else {
+            animator.Play("WrongAnswer", 2, 0f);
+            sounds.PlaySFX(sounds.wrongAnswer);
             uiText.text = "Wrong!";
         }
         foreach (Transform child in transform.parent)
@@ -28,6 +34,7 @@ public class AnswerButton : MonoBehaviour
             child.GetComponent<AnswerButton>().RightOrWrong();
         }
         gamelogic.GetComponent<GameLogic>().startButtonVisibility();
+        curtainAnimator.Play("Down", 0, 0f);
     }
     private void RightOrWrong() {
         var colors = GetComponent<Button> ().colors;
@@ -43,5 +50,8 @@ public class AnswerButton : MonoBehaviour
     public void buttonSetup(string text, bool correctAnswer) {
         this.correctAnswer = correctAnswer;
         alternativ.text = text;
+    }
+        private void Awake() {
+        sounds = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
     }
 }
