@@ -10,5 +10,6 @@ AssetOrigin:
   productId: 303658
   packageName: Urban Business Center
   packageVersion: 1.0
-  assetPath: Assets/Urban Business Center/3D Model/Urban office .prefab
+  assetPath: Assets/UnityStoreAssets/Urban Business Center/3D Model/Urban office
+    .prefab
   uploadId: 716324

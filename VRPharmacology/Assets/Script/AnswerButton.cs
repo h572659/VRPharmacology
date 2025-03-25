@@ -11,6 +11,7 @@ public class AnswerButton : MonoBehaviour
     [SerializeField] private Animator curtainAnimator; // Animerer gardinen animator
 
     [SerializeField] private GameObject gamelogic;
+    private GameLogic gameController;
     private SoundManager sounds;
 
     public void ClickMe(){
@@ -19,6 +20,7 @@ public class AnswerButton : MonoBehaviour
             uiText.text = "Correct!";
             sounds.PlaySFX(sounds.correctAnswer);
             animator.Play("ThumbsUP", 2, 0f);
+            gameController.incScore();
         } else {
             animator.Play("WrongAnswer", 2, 0f);
             sounds.PlaySFX(sounds.wrongAnswer);
@@ -33,7 +35,7 @@ public class AnswerButton : MonoBehaviour
             child.GetComponent<Button>().interactable = false;
             child.GetComponent<AnswerButton>().RightOrWrong();
         }
-        gamelogic.GetComponent<GameLogic>().startButtonVisibility();
+        gameController.startButtonVisibility();
         curtainAnimator.Play("Down", 0, 0f);
     }
     private void RightOrWrong() {
@@ -53,5 +55,6 @@ public class AnswerButton : MonoBehaviour
     }
         private void Awake() {
         sounds = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+        gameController = gamelogic.GetComponent<GameLogic>();
     }
 }

@@ -8,20 +8,24 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class GameLogic : MonoBehaviour {
-    [SerializeField] private TMP_Text uiText; // Heter UI, men burde heite snakkebobble.
+    [SerializeField] private TMP_Text uiText; // Heter UI, men burde heite snakkebobble tekst ellerno.
     [SerializeField] private float typeSpeed = 0.02f; // Ser litt kulere ut om ikke alt skrives ut med en gang, dette bestemmer farten
     [SerializeField] private float ButtonSpeed = 0.02f; // Tiden det tar mellom kver knapp blir synlig, igjen fordi dette ser kullere ut
     [SerializeField] private Animator animator; // "Mascots" animator
     [SerializeField] private Animator curtainAnimator; // Animerer gardinen animator
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject OptionsButtons; // Valg alternativene
+    [SerializeField] private GameObject endScreen;
+    [SerializeField] private GameObject snakkebobble;
+    [SerializeField] private TMP_Text ScoreText;
+
     
     // Spørsmålene 
     private Stack<QuizQuestion> questionStack = new Stack<QuizQuestion>();
     // Spørsmålet
-    QuizQuestion question;
+    private QuizQuestion question;
     // telle var for indexer
-    int index = 0;
+    private int index = 0;
     // Teksten som går inn i snakkebobblen
     private string fullText;
     // Variabel som blir brukt for skrive effekten i snakkebobblen. 
@@ -33,6 +37,8 @@ public class GameLogic : MonoBehaviour {
     private SoundManager sounds;
     private Patient patientModelController;
     private bool gameRunning = false;
+    private int score = 0;
+    private int antallSporsmal;
 
     private void Awake() {
         sounds = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
@@ -117,7 +123,9 @@ public class GameLogic : MonoBehaviour {
         curtainAnimator.Play("Up",0,0f);
         StartCoroutine(ActivateButtons());
         } else {
-            uiText.text = "This is the end of the game";
+            snakkebobble.SetActive(false);
+            endScreen.SetActive(true);
+            ScoreText.text = score + "/"+ antallSporsmal + " riktig!";
         }
     }
         private IEnumerator ActivateButtons()
@@ -135,13 +143,14 @@ public class GameLogic : MonoBehaviour {
     }
     void LoadQuestionsFromJson()
     {
-        // Load the JSON file from Resources folder
+        // Henter jsonfil fra Resourcefolder.
         TextAsset jsonFile = Resources.Load<TextAsset>("questions");
 
         if (jsonFile != null)
         {
             // Henter spørsmål fra Json
             List<QuizQuestion> questions = JsonHelper.FromJson<QuizQuestion>(jsonFile.text).ToList();
+            antallSporsmal = questions.Count;
             // Sorterer tilfeldig 
             questions = questions.OrderBy(q => Random.value).ToList();        
             
@@ -157,6 +166,8 @@ public class GameLogic : MonoBehaviour {
             Debug.LogError("Quiz JSON file not found in Resources!");
         }
     }
-
+    public void incScore(){
+        score++;
+    }
 
 }

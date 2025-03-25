@@ -6,12 +6,6 @@
     "man": false
   },
   {
-    "question": "What is 2 + 2?",
-    "answers": ["3", "4", "5", "6"],
-    "correctIndex": 1,
-    "man": false
-  },
-  {
     "question": "Pasienten veier 60 kg, og det oppgitte distribusjonsvolumet for digoksin er 7 L/kg. Hva er pasientens totale distribusjonsvolum for digoksin?",
     "answers": ["120 L", "60 L", "420L", "413 L"],
     "correctIndex": 2,

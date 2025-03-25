@@ -150,6 +150,15 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
+        time: 0.48333332
+        value: {x: 0, y: 0, z: -15.029}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
         time: 0.53333336
         value: {x: 0, y: 0, z: 15.201}
         inSlope: {x: 0, y: 0, z: 0}
@@ -759,6 +768,15 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 0.48333332
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 0.53333336
         value: 0
         inSlope: 0
@@ -792,6 +810,15 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.48333332
         value: 0
         inSlope: 0
         outSlope: 0
@@ -834,6 +861,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 5.875
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.48333332
+        value: -15.029
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1202,8 +1238,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: Model/Female_Anatomy_Complete_Rig_V07_MAX_2015/Female_root_anim/Female/Female
-      Pelvis/Female Spine/Female Spine1/Female Spine2/Female Spine3/Female Neck/Female
-      Neck1
+      Pelvis/Female Spine/Female R Thigh/Female R Calf
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1216,8 +1251,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
     path: Model/Female_Anatomy_Complete_Rig_V07_MAX_2015/Female_root_anim/Female/Female
-      Pelvis/Female Spine/Female Spine1/Female Spine2/Female Spine3/Female Neck/Female
-      Neck1
+      Pelvis/Female Spine/Female R Thigh/Female R Calf
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1230,8 +1264,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: Model/Female_Anatomy_Complete_Rig_V07_MAX_2015/Female_root_anim/Female/Female
-      Pelvis/Female Spine/Female Spine1/Female Spine2/Female Spine3/Female Neck/Female
-      Neck1
+      Pelvis/Female Spine/Female R Thigh/Female R Calf
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1322,7 +1355,8 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: Model/Female_Anatomy_Complete_Rig_V07_MAX_2015/Female_root_anim/Female/Female
-      Pelvis/Female Spine/Female R Thigh/Female R Calf
+      Pelvis/Female Spine/Female Spine1/Female Spine2/Female Spine3/Female Neck/Female
+      Neck1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1335,7 +1369,8 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
     path: Model/Female_Anatomy_Complete_Rig_V07_MAX_2015/Female_root_anim/Female/Female
-      Pelvis/Female Spine/Female R Thigh/Female R Calf
+      Pelvis/Female Spine/Female Spine1/Female Spine2/Female Spine3/Female Neck/Female
+      Neck1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1348,7 +1383,8 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: Model/Female_Anatomy_Complete_Rig_V07_MAX_2015/Female_root_anim/Female/Female
-      Pelvis/Female Spine/Female R Thigh/Female R Calf
+      Pelvis/Female Spine/Female Spine1/Female Spine2/Female Spine3/Female Neck/Female
+      Neck1
     classID: 4
     script: {fileID: 0}
     flags: 0
