@@ -6,4 +6,7 @@ public class QuizQuestion {
   public string[] answers;
   public int correctIndex;
   public bool man;
+  public string wrongAnswerText;
+  public string correctAnswerText;
+
 }

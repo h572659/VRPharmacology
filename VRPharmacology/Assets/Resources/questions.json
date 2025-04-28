@@ -1,55 +1,92 @@
 [
   {
-    "question": "Du administrerer digoksin til en 78 år gammel kvinne med hjertesvikt og atrieflimmer. Legemidlet kommer inn i blodet og begynner å fordele seg. Hvor tror du digoksin primært distribueres?",
-    "answers": ["Fettvev", "Muskelvev", "Plasma", "Jeg veit ikke"],
-    "correctIndex": 1,
-    "man": false
+      "question": "Why is a high initial dose of antibiotics ('loading dose') given in severe infections?",
+      "answers": ["To increase the volume of distribution", "To quickly achieve therapeutic concentration", "To reduce liver metabolism", "To decrease renal excretion"],
+      "correctIndex": 1,
+      "man": true,
+      "wrongAnswerText": "That's incorrect. A high initial dose is given to rapidly achieve therapeutic levels in the body.",
+      "correctAnswerText": "Correct! A loading dose quickly achieves therapeutic concentration."
   },
   {
-    "question": "Pasienten veier 60 kg, og det oppgitte distribusjonsvolumet for digoksin er 7 L/kg. Hva er pasientens totale distribusjonsvolum for digoksin?",
-    "answers": ["120 L", "60 L", "420L", "413 L"],
-    "correctIndex": 2,
-    "man": false
+      "question": "Lithium is used for bipolar disorder and has a relatively low volume of distribution. Where is lithium primarily located in the body?",
+      "answers": ["Fat tissue", "Bloodstream", "Brain tissue", "Muscle tissue"],
+      "correctIndex": 1,
+      "man": false,
+      "wrongAnswerText": "That's not correct. A low volume of distribution means the drug primarily stays in the bloodstream.",
+      "correctAnswerText": "Correct! A low volume of distribution indicates lithium primarily remains in the bloodstream."
   },
   {
-    "question": "Etter flere dager viser pasienten tegn på toksisitet. Hva har skjedd med distribusjonsvolumet?",
-    "answers": ["Økt", "Reduset", "Uendret", "Hæh?"],
-    "correctIndex": 1,
-    "man": false
+      "question": "Why might fat-soluble anesthetics have a prolonged effect in obese patients?",
+      "answers": ["Increased liver metabolism", "Faster renal elimination", "Increased distribution volume and slow release from fat tissue", "Reduced plasma protein binding"],
+      "correctIndex": 2,
+      "man": true,
+      "wrongAnswerText": "Not quite correct. The prolonged effect results from increased distribution to and slow release from fat tissue.",
+      "correctAnswerText": "Correct! Increased fat tissue expands distribution volume, causing a slow release of the anesthetic."
   },
   {
-    "question": "En 65 år gammel mann med sepsis får en intravenøs dose gentamicin. Legemidlet sprer seg gjennom kroppen. Hvordan påvirkes distribusjonsvolumet for propofol hos denne pasienten?",
-    "answers": ["Øker", "Reduseres", "Forblir uendret", "Haha.."],
-    "correctIndex": 0,
-    "man": true
+      "question": "A patient treated with diuretics for heart failure becomes significantly dehydrated. How does this affect the distribution volume of water-soluble drugs?",
+      "answers": ["The distribution volume will increase", "The distribution volume will remain unchanged", "The distribution volume will decrease", "Distribution volume is influenced only by liver function"],
+      "correctIndex": 2,
+      "man": false,
+      "wrongAnswerText": "That's incorrect. Dehydration reduces body fluid volume and consequently decreases the distribution volume.",
+      "correctAnswerText": "Correct! Dehydration reduces body fluid, decreasing the distribution volume for water-soluble drugs."
   },
   {
-    "question": "Pasientens infeksjon forverres. Hva bør du gjøre med doseringen?",
-    "answers": ["Øke dosen", "Redusere dosen", "Beholde samme dose", "Hakke peiling"],
-    "correctIndex": 0,
-    "man": false
+      "question": "An elderly patient receives benzodiazepines for anxiety and sleep disturbances. What explains the prolonged effect often seen in elderly patients?",
+      "answers": ["Increased distribution to fat tissue", "Faster renal elimination", "Reduced plasma protein binding", "Increased liver metabolism"],
+      "correctIndex": 0,
+      "man": true,
+      "wrongAnswerText": "No, that's not correct. Elderly patients have increased fat distribution, prolonging the effect of benzodiazepines.",
+      "correctAnswerText": "Correct! An increased proportion of body fat in elderly patients increases benzodiazepine distribution, prolonging their effect."
+  },
+  
+  {
+      "question": "In acute poisoning with aspirin (acetylsalicylic acid), alkalinization of urine is performed. How does this affect the distribution volume?",
+      "answers": ["Decreases due to increased renal elimination", "Increases due to higher absorption in tissues", "Remains unchanged", "Reduces plasma protein binding significantly"],
+      "correctIndex": 0,
+      "man": true,
+      "wrongAnswerText": "That's incorrect. Alkalinization of urine increases renal elimination and thus decreases distribution volume.",
+      "correctAnswerText": "Correct! Alkalinizing urine enhances renal elimination, effectively decreasing the distribution volume of aspirin."
   },
   {
-    "question": "Pasienten veier 80 kg, og gentamicin har et distribusjonsvolum på 0,25 L/kg. Hva er pasientens distribusjonsvolum?",
-    "answers": ["10 L", "20 L", "30 L", "40 L"],
-    "correctIndex": 1,
-    "man": false
-  },
-  {"question": "En 45 år gammel mann (BMI = 40) får propofol som anestesi. Legemidlet sprer seg raskt.",
-    "answers": ["Øker", "Reduseres", "Forblir uendret", "Veit ikke"],
-    "correctIndex": 1,
-    "man": true
+      "question": "A drug strongly binds to plasma albumin. How does severe hypoalbuminemia affect its distribution volume?",
+      "answers": ["Reduces distribution volume", "Increases distribution volume", "No effect", "Decreases renal excretion significantly"],
+      "correctIndex": 1,
+      "man": true,
+      "wrongAnswerText": "That's incorrect. Reduced plasma protein binding increases free drug levels, thus increasing distribution volume.",
+      "correctAnswerText": "Correct! Severe hypoalbuminemia increases free drug concentration, thus increasing distribution volume."
   },
   {
-    "question":"Etter operasjonen tar det lengre tid for pasienten å våkne. Hva burde vært gjort annerledes?",
-    "answers": ["Redusert vedlikeholdsdose", "Økt initialdose", "Ingen endringer", "Mye endringer"],
-    "correctIndex": 0,
-    "man": false
+      "question": "How does severe dehydration affect the distribution volume of lipophilic drugs?",
+      "answers": ["Significantly increases", "Significantly decreases", "Little to no effect", "Enhances renal clearance"],
+      "correctIndex": 2,
+      "man": false,
+      "wrongAnswerText": "Incorrect. Severe dehydration has little effect on the distribution volume of lipophilic drugs, as these primarily distribute to fat tissues.",
+      "correctAnswerText": "Correct! Lipophilic drugs distribute mainly to fat tissues and thus are minimally affected by dehydration."
+  },
+  
+  {
+      "question": "Why might the hydrophilic aminoglycoside antibiotics require dosage adjustment in dehydrated patients?",
+      "answers": ["Increased liver metabolism", "Increased renal excretion", "Reduced distribution volume", "Enhanced tissue penetration"],
+      "correctIndex": 2,
+      "man": false,
+      "wrongAnswerText": "Incorrect. Dehydration reduces the distribution volume for water-soluble drugs like aminoglycosides.",
+      "correctAnswerText": "Correct! Dehydration reduces the volume of distribution, requiring dosage adjustments."  
   },
   {
-    "question": "Halveringstiden (t1/2) kan estimeres med formelen: t1/2 = (0,693 × Vd) / Cl. Hvis distribusjonsvolumet for propofol hos denne pasienten er 400 L og clearance (Cl) er 40 L/time, hva er halveringstiden?",
-    "answers": ["5 timer", "7 timer", "8 timer", "10 timer"],
-    "correctIndex": 1,
-    "man": false
+      "question": "Heparin has a low distribution volume. What clinical implication does this have?",
+      "answers": ["It penetrates tissues easily", "It remains mostly in the vascular compartment", "It is rapidly excreted in bile", "It accumulates in adipose tissue"],
+      "correctIndex": 1,
+      "man": true,
+      "wrongAnswerText": "Incorrect. A low distribution volume indicates heparin stays mostly in the vascular compartment.",
+      "correctAnswerText": "Correct! Heparin primarily remains in the vascular compartment due to its low volume of distribution."
+  },
+  {
+      "question": "Why does ethanol distribute widely in the body tissues?",
+      "answers": ["It is both water- and lipid-soluble", "It binds strongly to plasma proteins", "It is extensively metabolized by the liver", "It has rapid renal clearance"],
+      "correctIndex": 0,
+      "man": false,
+      "wrongAnswerText": "Incorrect. Ethanol is both water- and lipid-soluble, facilitating wide distribution throughout body tissues.",
+      "correctAnswerText": "Correct! Ethanol's water- and lipid-solubility allows extensive distribution in body tissues."
   }
 ]

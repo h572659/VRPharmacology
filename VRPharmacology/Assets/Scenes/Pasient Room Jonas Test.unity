@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 915672934}
-  typeSpeed: 0.07
-  ButtonSpeed: 2.5
+  typeSpeed: 0
+  ButtonSpeed: 0.13
   animator: {fileID: 450976418}
   curtainAnimator: {fileID: 581491314}
   startButton: {fileID: 1002352405}
@@ -1681,11 +1681,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &466681690 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2806920212520609675, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
-  m_PrefabInstance: {fileID: 1225427639}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &490165999
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,7 +4102,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 264075369}
-  m_Father: {fileID: 466681690}
+  m_Father: {fileID: 1584379966}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.629}
 --- !u!136 &1100185595
 CapsuleCollider:
@@ -4684,6 +4679,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1797286220}
     m_Modifications:
+    - target: {fileID: 1470302875870924299, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
+      propertyPath: 'm_Transforms.Array.data[867]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1792163148930660450, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
       propertyPath: m_Name
       value: Bed
@@ -4788,6 +4787,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 3351812844193936975, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069995665909146022, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
+      propertyPath: maleHatsNode
+      value: 
+      objectReference: {fileID: 1833461210}
     - target: {fileID: 7498065970839502218, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.476
@@ -4808,7 +4815,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 9114304136572890362, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2806920212520609675, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 2702789296869564630, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1100185594}
     m_AddedComponents:
@@ -7108,6 +7115,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1833461210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6643932664652700268, guid: 2806e2b93343d134686718e666d83f9e, type: 3}
+  m_PrefabInstance: {fileID: 1225427639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1862115815
 GameObject:
   m_ObjectHideFlags: 0

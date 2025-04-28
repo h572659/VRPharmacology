@@ -14,17 +14,21 @@ public class AnswerButton : MonoBehaviour
     private GameLogic gameController;
     private SoundManager sounds;
 
+    // Følgene er tilbakemelding på rett og galt svar.
+    private string correctAnswerText;
+    private string wrongAnswerText;
+
     public void ClickMe(){
         gamelogic.GetComponent<MonoBehaviour>().StopAllCoroutines();
         if (correctAnswer){
-            uiText.text = "Correct!";
+            uiText.text = correctAnswerText;
             sounds.PlaySFX(sounds.correctAnswer);
             animator.Play("ThumbsUP", 2, 0f);
             gameController.incScore();
         } else {
             animator.Play("WrongAnswer", 2, 0f);
             sounds.PlaySFX(sounds.wrongAnswer);
-            uiText.text = "Wrong!";
+            uiText.text = wrongAnswerText;
         }
         foreach (Transform child in transform.parent)
         {
@@ -49,9 +53,11 @@ public class AnswerButton : MonoBehaviour
             GetComponent<Button> ().colors = colors;
           }
     }
-    public void buttonSetup(string text, bool correctAnswer) {
+    public void buttonSetup(string text, bool correctAnswer, string correctText, string wrongText) {
         this.correctAnswer = correctAnswer;
         alternativ.text = text;
+        correctAnswerText = correctText;
+        wrongAnswerText = wrongText;
     }
         private void Awake() {
         sounds = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();

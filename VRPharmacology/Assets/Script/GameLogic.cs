@@ -114,7 +114,7 @@ public class GameLogic : MonoBehaviour {
         // "Randomizer" rekkefølgen til knappene, så går igjenom og bestemmer deres status som rett eller falsk svar.
         buttonsLogic = buttonsLogic.OrderBy(q => Random.value).ToList(); 
         foreach (AnswerButton button in buttonsLogic) {
-        button.buttonSetup(question.answers[index], index == question.correctIndex);
+        button.buttonSetup(question.answers[index], index == question.correctIndex, question.correctAnswerText, question.wrongAnswerText);
             index++;
             if (index > 3) {
                 index = 0;
