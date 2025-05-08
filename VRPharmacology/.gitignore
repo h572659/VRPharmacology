@@ -77,3 +77,7 @@ Assets/Prefabs/*.fbx
 
 # To avoid violating copyright this will be added to prevet accidentally redistributing the free assests we have used in the project
 Assets/UnityStoreAssets
+Assets/Audio
+Assets/Fonts
+Assets/Anatomy
+Assets/Texture
