@@ -45,7 +45,9 @@ public class AnswerButton : MonoBehaviour
     private void RightOrWrong() {
         var colors = GetComponent<Button> ().colors;
         if (correctAnswer) {
-             //Stjålet denne koden fra nettet, veit ikke hva for noe svart magi dette er
+             // Stjålet denne koden fra nettet, veit ikke hva for noe svart magi dette er
+             // NOTE: 06.05.25, husker ikke hvem jeg tokk det fra, men sannsynligvis Tim-C
+             // https://discussions.unity.com/t/changing-the-color-of-a-ui-button-with-scripting/549785/5
             colors.disabledColor = Color.green;
             GetComponent<Button> ().colors = colors;
           } else {

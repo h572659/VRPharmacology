@@ -39,7 +39,6 @@
       "wrongAnswerText": "No, that's not correct. Elderly patients have increased fat distribution, prolonging the effect of benzodiazepines.",
       "correctAnswerText": "Correct! An increased proportion of body fat in elderly patients increases benzodiazepine distribution, prolonging their effect."
   },
-  
   {
       "question": "In acute poisoning with aspirin (acetylsalicylic acid), alkalinization of urine is performed. How does this affect the distribution volume?",
       "answers": ["Decreases due to increased renal elimination", "Increases due to higher absorption in tissues", "Remains unchanged", "Reduces plasma protein binding significantly"],

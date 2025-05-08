@@ -54,7 +54,7 @@ public class GameLogic : MonoBehaviour {
             buttonsLogic.Add(child.GetComponent<AnswerButton>());
         }
         LoadQuestionsFromJson();
-        fullText = "Welcome! Please press play to start.";
+        fullText = "Welcome! Please press question to start.";
         animator.Play("Talk", 1, 0f);
         typingCoroutine = StartCoroutine(ShowText());
     }
@@ -99,7 +99,7 @@ public class GameLogic : MonoBehaviour {
     // Denne metoden henter spørsmål fra stokken, og setter opp spørsmål og svar.
     private void questionLogic() {
         if (questionStack.Count != 0){
-        question = questionStack.Pop(); // Henter spørsmål fra toppen av stacken TODO: Sjekk om den er tom.
+        question = questionStack.Pop(); // Henter spørsmål fra toppen av stacken
         if (question.man){
             patientModelController.PatientMan();
         } else {
@@ -125,7 +125,7 @@ public class GameLogic : MonoBehaviour {
         } else {
             snakkebobble.SetActive(false);
             endScreen.SetActive(true);
-            ScoreText.text = score + "/"+ antallSporsmal + " riktig!";
+            ScoreText.text = score + "/"+ antallSporsmal + " correct!";
         }
     }
         private IEnumerator ActivateButtons()
