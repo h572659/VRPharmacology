@@ -1,7 +1,8 @@
 # VRPharmacology - Old name, just "The game" now
 This is a relatively simple 3D quiz game that is meant to be part of a student project, a minigame on a website.
-
-Assets:
+# Game
+https://play.unity.com/en/games/8c0bbe5a-da2f-433c-9828-d93825100cc8/phanoncomp
+# Assets:
 Unity Asset Store. (n.d.). Hospital Bed - Free 3D Asset [online]. Tilgjengelig på: https://assetstore.unity.com/packages/3d/props/interior/hospital-bed-free-3d-asset-190310.
 
 PolyHaven. (n.d.). Asset Library [online]. Tilgjengelig på: https://polyhaven.com/.
@@ -29,5 +30,3 @@ assetstore.unity.com. (n.d.). Free Music Tracks For Games | Audio Music | Unity 
 Fab (2024). Fab. [online] Fab.com. Tilgjengelig på: https://www.fab.com/listings/c1bf4f79-5cf2-47ad-a4ca-714cbf6ff544.
 
 ‌Fab (2024). Fab. [online] Fab.com. Tilgjengelig på: https://www.fab.com/listings/95679ca6-4c67-4852-847f-589a0f2c5be2.
-# Game
-https://play.unity.com/en/games/8c0bbe5a-da2f-433c-9828-d93825100cc8/phanoncomp
