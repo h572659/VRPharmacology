@@ -1,5 +1,5 @@
 # VRPharmacology - Old name, just "The game" now
-This is a relatively simple 3D quiz game that is meant to be part of a student project, a minigame on a website.
+This is a relatively simple 3D quiz game that is meant to be part of a student project, a minigame on a website. In order to avoid copyright issues related to distribution, the (free) assets used in the project are not included in this repository. Links to the assets are provided, but some have become deprecated over the course of this project.
 # Game
 https://play.unity.com/en/games/8c0bbe5a-da2f-433c-9828-d93825100cc8/phanoncomp
 # Assets:
