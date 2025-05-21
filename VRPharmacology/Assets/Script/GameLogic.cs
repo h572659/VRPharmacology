@@ -10,14 +10,14 @@ using System.Linq;
 public class GameLogic : MonoBehaviour {
     [SerializeField] private TMP_Text uiText; // Heter UI, men burde heite snakkebobble tekst ellerno.
     [SerializeField] private float typeSpeed = 0.02f; // Ser litt kulere ut om ikke alt skrives ut med en gang, dette bestemmer farten
-    [SerializeField] private float ButtonSpeed = 0.02f; // Tiden det tar mellom kver knapp blir synlig, igjen fordi dette ser kullere ut
+    [SerializeField] private float buttonSpeed = 0.02f; // Tiden det tar mellom kver knapp blir synlig, igjen fordi dette ser kullere ut
     [SerializeField] private Animator animator; // "Mascots" animator
     [SerializeField] private Animator curtainAnimator; // Animerer gardinen animator
     [SerializeField] private GameObject startButton;
-    [SerializeField] private GameObject OptionsButtons; // Valg alternativene
+    [SerializeField] private GameObject optionsButtons; // Valg alternativene
     [SerializeField] private GameObject endScreen;
     [SerializeField] private GameObject snakkebobble;
-    [SerializeField] private TMP_Text ScoreText;
+    [SerializeField] private TMP_Text scoreText;
 
     
     // Spørsmålene 
@@ -50,7 +50,7 @@ public class GameLogic : MonoBehaviour {
         sounds.PlayMusic(sounds.before);
         // Henter ut Monoscriptene til knappene.
         buttonsLogic = new List<AnswerButton>();
-        foreach (Transform child in OptionsButtons.transform) {
+        foreach (Transform child in optionsButtons.transform) {
             buttonsLogic.Add(child.GetComponent<AnswerButton>());
         }
         LoadQuestionsFromJson();
@@ -78,7 +78,7 @@ public class GameLogic : MonoBehaviour {
         }
         startButtonVisibility();
         // Rydder opp knapper
-        foreach (Transform child in OptionsButtons.transform){
+        foreach (Transform child in optionsButtons.transform){
             child.gameObject.SetActive(false); // Sørger for at de ikke vises på skjerm
             child.GetComponent<Button>().interactable = true; // Sørger for at når de vises at de kan klikkes på
             AnswerButton button = child.GetComponent<AnswerButton>(); // MonoScriptet som bestemmer mye av atferden
@@ -125,19 +125,19 @@ public class GameLogic : MonoBehaviour {
         } else {
             snakkebobble.SetActive(false);
             endScreen.SetActive(true);
-            ScoreText.text = score + "/"+ antallSporsmal + " correct!";
+            scoreText.text = score + "/"+ antallSporsmal + " correct!";
         }
     }
         private IEnumerator ActivateButtons()
     {
         // Get og slå på alle barneobjektene 
-        foreach (Transform child in OptionsButtons.transform)
+        foreach (Transform child in optionsButtons.transform)
         {
             if (child.gameObject.activeSelf == false)  // Only activate if it's not active
             {
                 child.gameObject.SetActive(true);   // Activate the button
             }
-            yield return new WaitForSeconds(ButtonSpeed);  // Wait for the specified delay before activating the next one
+            yield return new WaitForSeconds(buttonSpeed);  // Wait for the specified delay before activating the next one
         }
 
     }

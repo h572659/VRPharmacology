@@ -1,5 +1,8 @@
 using UnityEngine;
 
+// The code in this class was was written by chatGPT
+// I think I saw a simmilar solution in StackOverFlow which is why I was willing to trust this
+
 public static class JsonHelper
 {
     public static T[] FromJson<T>(string json)

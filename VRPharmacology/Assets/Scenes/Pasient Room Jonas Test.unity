@@ -201,14 +201,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 915672934}
   typeSpeed: 0
-  ButtonSpeed: 0.13
+  buttonSpeed: 0.02
   animator: {fileID: 450976418}
   curtainAnimator: {fileID: 581491314}
   startButton: {fileID: 1002352405}
-  OptionsButtons: {fileID: 1408652268}
+  optionsButtons: {fileID: 1408652268}
   endScreen: {fileID: 1814485112}
   snakkebobble: {fileID: 1753977905}
-  ScoreText: {fileID: 1055500737}
+  scoreText: {fileID: 1055500737}
 --- !u!1 &56173006
 GameObject:
   m_ObjectHideFlags: 0
@@ -5377,7 +5377,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381486032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.39353, y: 0.39353, z: 0.39353}
   m_ConstrainProportionsScale: 1
   m_Children:

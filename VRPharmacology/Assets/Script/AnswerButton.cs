@@ -10,7 +10,7 @@ public class AnswerButton : MonoBehaviour
     [SerializeField] private Animator animator; // "Mascots" animator
     [SerializeField] private Animator curtainAnimator; // Animerer gardinen animator
 
-    [SerializeField] private GameObject gamelogic;
+    [SerializeField] private GameObject gameLogic;
     private GameLogic gameController;
     private SoundManager sounds;
 
@@ -19,7 +19,7 @@ public class AnswerButton : MonoBehaviour
     private string wrongAnswerText;
 
     public void ClickMe(){
-        gamelogic.GetComponent<MonoBehaviour>().StopAllCoroutines();
+        gameLogic.GetComponent<MonoBehaviour>().StopAllCoroutines();
         if (correctAnswer){
             uiText.text = correctAnswerText;
             sounds.PlaySFX(sounds.correctAnswer);
@@ -63,6 +63,6 @@ public class AnswerButton : MonoBehaviour
     }
         private void Awake() {
         sounds = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
-        gameController = gamelogic.GetComponent<GameLogic>();
+        gameController = gameLogic.GetComponent<GameLogic>();
     }
 }
